@@ -3,8 +3,8 @@ C# 9.0 is taking shape, and I’d like to share my thinking on some of the major
 
 
 # Examples of the majority of the new features in C# 9
-1. [Top level statements](#1. Top-level-statements)
-2. [Init only setters](#2. Init-only-setters)
+1. [Top level statements](# 1. Top-level-statements)
+2. [Init only setters](# 2. Init-only-setters)
 3. [Record types](#3. Record-types)
 4. [Pattern matching enhancements](#4. Pattern-matching-enhancements)
 5. [Target-typed new expressions](#5. Target-typed-new-expressions)
@@ -12,9 +12,10 @@ C# 9.0 is taking shape, and I’d like to share my thinking on some of the major
 7. [Static anonymous functions](#7. Static-anonymous-functions)
 8. [Attributes on local functions](#8. Attributes-on-local-functions)
  
- Reference https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9
- https://gist.github.com/dannyskoog/c9a61620a6f00430d8b728ef481164cc#file-8-attributes-on-local-functions-cs
- https://devblogs.microsoft.com/dotnet/welcome-to-c-9-0/
+ Reference 
+ [1](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9)
+ [2](https://gist.github.com/dannyskoog/c9a61620a6f00430d8b728ef481164cc#file-8-attributes-on-local-functions-cs)
+ [3](https://devblogs.microsoft.com/dotnet/welcome-to-c-9-0/)
 
 
 
