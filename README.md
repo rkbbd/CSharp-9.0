@@ -3,20 +3,22 @@ C# 9.0 is taking shape, and I’d like to share my thinking on some of the major
 
 
 # Examples of the majority of the new features in C# 9
-1. [Top level statements](#Top-level-statements)
-2. [Init only setters](#Init-only-setters)
-3. [Record types](#Record-types)
-4. [Pattern matching enhancements](#Pattern-matching-enhancements)
-5. [Target-typed new expressions](#Target-typed-new-expressions)
-6. [With-expressions](#With-expressions)
-7. [Static anonymous functions](#Static-anonymous-functions)
-8. [Attributes on local functions](#Attributes-on-local-functions)
+1. [Top level statements](#1. Top-level-statements)
+2. [Init only setters](#2. Init-only-setters)
+3. [Record types](#3. Record-types)
+4. [Pattern matching enhancements](#4. Pattern-matching-enhancements)
+5. [Target-typed new expressions](#5. Target-typed-new-expressions)
+6. [With-expressions](#6. With-expressions)
+7. [Static anonymous functions](#7. Static-anonymous-functions)
+8. [Attributes on local functions](#8. Attributes-on-local-functions)
  
  Reference https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9
+ https://gist.github.com/dannyskoog/c9a61620a6f00430d8b728ef481164cc#file-8-attributes-on-local-functions-cs
+ https://devblogs.microsoft.com/dotnet/welcome-to-c-9-0/
 
 
 
-## Top level statements
+## 1. Top level statements
 
 Top-level statements remove unnecessary ceremony from many applications. Consider the canonical "Hello World!" program:
 
@@ -143,6 +145,8 @@ bool IsLetter3(char c) => c is (>= 'a' and <= 'z') or (>= 'A' and <= 'Z');
 
 ## 5. Target-typed new expressions
 
+Do not require type specification for constructors when the type is known.
+
 ```
 // Example 1
 // C# 8
@@ -170,11 +174,15 @@ Person GetPerson2()
 
 ```
 ## 6. With-expressions
+
+When working with immutable data, a common pattern is to create new values from existing ones to represent a new state. For instance, if our person were to change their last name we would represent it as a new object that’s a copy of the old one, except with a different last name. This technique is often referred to as non-destructive mutation. Instead of representing the person over time, the record represents the person’s state at a given time.
+
 ```
 var otherPerson = person with { LastName = "Hanselman" };
 
 ```
-
+With-expressions use object initializer syntax to state what’s different in the new object from the old object. You can specify multiple properties.
+A record implicitly defines a protected “copy constructor” – a constructor that takes an existing record object and copies it field by field to the new one:
 ```
 
 protected Person(Person original) { /* copy all the fields */ } // generated
@@ -194,7 +202,8 @@ Func<int, int> func2 = static (int num) => x + 5; // NOT OK
 ```
 
 ## 8. Attributes on local functions
-
+Attributes with a specified meaning when applied to a method, its parameters, or its type parameters will have the same meaning when applied to a local function, its parameters, or its type parameters, respectively.
+A local function can be made conditional in the same sense as a conditional method by decorating it with a [ConditionalAttribute].
 ```
 int Calculate(int? num)
 {
