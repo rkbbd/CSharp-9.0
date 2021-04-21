@@ -3,14 +3,14 @@ C# 9.0 is taking shape, and I’d like to share my thinking on some of the major
 
 
 # Examples of the majority of the new features in C# 9
-1. [Top level statements](#1.-Top-level-statements)
-2. [Init only setters](#2.-Init-only-setters)
-3. [Record types](#3.-Record-types)
-4. [Pattern matching enhancements](#4.-Pattern-matching-enhancements)
-5. [Target-typed new expressions](#5.-Target-typed-new-expressions)
-6. [With-expressions](#6.-With-expressions)
-7. [Static anonymous functions](#7.-Static-anonymous-functions)
-8. [Attributes on local functions](#8.-Attributes-on-local-functions)
+1. [Top level statements](#1-Top-level-statements)
+2. [Init only setters](#2-Init-only-setters)
+3. [Record types](#3-Record-types)
+4. [Pattern matching enhancements](#4-Pattern-matching-enhancements)
+5. [Target-typed new expressions](#5-Target-typed-new-expressions)
+6. [With-expressions](#6-With-expressions)
+7. [Static anonymous functions](#7-Static-anonymous-functions)
+8. [Attributes on local functions](#8-Attributes-on-local-functions)
  
  Reference 
  [1](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9)
@@ -19,7 +19,7 @@ C# 9.0 is taking shape, and I’d like to share my thinking on some of the major
 
 
 
-## 1. Top level statements
+## 1 Top level statements
 
 Top-level statements remove unnecessary ceremony from many applications. Consider the canonical "Hello World!" program:
 
@@ -42,7 +42,7 @@ System.Console.WriteLine("Hello World!");
 If you wanted a one-line program, you could remove the using directive and use the fully qualified type name
 
 
-## 2. Init only setters
+## 2 Init only setters
 you can create init accessors instead of set accessors for properties and indexers. Callers can use property initializer syntax to set these values in creation expressions, but those properties are readonly once construction has completed
 
 ```
@@ -60,7 +60,7 @@ public class Person
 
 ```
 
-## 3. Record types
+## 3 Record types
 Init-only properties are great if you want to make individual properties immutable. If you want the whole object to be immutable and behave like a value, then you should consider declaring it as a record.
 
 ```
@@ -85,7 +85,7 @@ Console.WriteLine(person1.ToString()); // Outputs "Person { FirstName = Danny, L
 var (firstName, lastName) = person1;
 
 ```
-## 4. Pattern matching enhancements
+## 4 Pattern matching enhancements
 
 C# 9 includes new pattern matching improvements:
   1. Type patterns match a variable is a type
@@ -144,7 +144,7 @@ bool IsLetter3(char c) => c is (>= 'a' and <= 'z') or (>= 'A' and <= 'Z');
 
 ```
 
-## 5. Target-typed new expressions
+## 5 Target-typed new expressions
 
 Do not require type specification for constructors when the type is known.
 
@@ -174,7 +174,7 @@ Person GetPerson2()
 }
 
 ```
-## 6. With-expressions
+## 6 With-expressions
 
 When working with immutable data, a common pattern is to create new values from existing ones to represent a new state. For instance, if our person were to change their last name we would represent it as a new object that’s a copy of the old one, except with a different last name. This technique is often referred to as non-destructive mutation. Instead of representing the person over time, the record represents the person’s state at a given time.
 
@@ -190,7 +190,7 @@ protected Person(Person original) { /* copy all the fields */ } // generated
 
 ```
 
-## 7. Static anonymous functions
+## 7 Static anonymous functions
 
 ```
 var x = 5;
@@ -202,7 +202,7 @@ Func<int, int> func2 = static (int num) => x + 5; // NOT OK
 
 ```
 
-## 8. Attributes on local functions
+## 8 Attributes on local functions
 Attributes with a specified meaning when applied to a method, its parameters, or its type parameters will have the same meaning when applied to a local function, its parameters, or its type parameters, respectively.
 A local function can be made conditional in the same sense as a conditional method by decorating it with a [ConditionalAttribute].
 ```
