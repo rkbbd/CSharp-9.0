@@ -19,7 +19,7 @@ C# 9.0 is taking shape, and I’d like to share my thinking on some of the major
 
 
 
-## 1. Top level statements
+##1. Top level statements
 
 Top-level statements remove unnecessary ceremony from many applications. Consider the canonical "Hello World!" program:
 
