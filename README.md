@@ -3,14 +3,14 @@ C# 9.0 is taking shape, and I’d like to share my thinking on some of the major
 
 
 # Examples of the majority of the new features in C# 9
-1. [Top level statements](# 1. Top-level-statements)
-2. [Init only setters](# 2. Init-only-setters)
-3. [Record types](#3. Record-types)
-4. [Pattern matching enhancements](#4. Pattern-matching-enhancements)
-5. [Target-typed new expressions](#5. Target-typed-new-expressions)
-6. [With-expressions](#6. With-expressions)
-7. [Static anonymous functions](#7. Static-anonymous-functions)
-8. [Attributes on local functions](#8. Attributes-on-local-functions)
+1. [Top level statements](#1.-Top-level-statements)
+2. [Init only setters](#2.-Init-only-setters)
+3. [Record types](#3.-Record-types)
+4. [Pattern matching enhancements](#4.-Pattern-matching-enhancements)
+5. [Target-typed new expressions](#5.-Target-typed-new-expressions)
+6. [With-expressions](#6.-With-expressions)
+7. [Static anonymous functions](#7.-Static-anonymous-functions)
+8. [Attributes on local functions](#8.-Attributes-on-local-functions)
  
  Reference 
  [1](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-9)
