@@ -3,7 +3,7 @@ C# 9.0 is taking shape, and I’d like to share my thinking on some of the major
 
 
 # Examples of the majority of the new features in C# 9
-1. [Top level statements](#1.-Top-level-statements)
+1. [Top level statements](#1.Top-level-statements)
 2. [Init only setters](#2.-Init-only-setters)
 3. [Record types](#3.-Record-types)
 4. [Pattern matching enhancements](#4.-Pattern-matching-enhancements)
@@ -19,7 +19,7 @@ C# 9.0 is taking shape, and I’d like to share my thinking on some of the major
 
 
 
-##1. Top level statements
+##1.Top level statements
 
 Top-level statements remove unnecessary ceremony from many applications. Consider the canonical "Hello World!" program:
 
